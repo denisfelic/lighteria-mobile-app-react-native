@@ -1,24 +1,21 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 import CatalogScreen from './src/views/CatalogScreen/CatalogScreen';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import ItemDetailScreen from './src/views/ItemDetailScreen/ItemDetailScreen';
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styleApp.screen}>
-        <CatalogScreen />
-      </SafeAreaView>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="CatalogScreen">
+        <Stack.Screen name="CatalogScreen" component={CatalogScreen} />
+        <Stack.Screen name="ItemDetailScreen" component={ItemDetailScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styleApp = StyleSheet.create({
-  // Category Component
-  screen: {
-    backgroundColor: '#eee',
-    flex: 1,
-  },
-});
 
 export default App;
