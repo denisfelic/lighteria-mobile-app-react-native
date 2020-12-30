@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
-import Header from '../components/Header/Header';
-import ItemList from '../components/ItemList/ItemList';
+import Header from '../../components/Header/Header';
+import ItemList from '../../components/ItemList/ItemList';
 
 // TODO: Create a component to envolve all screens in application, with have SafeAreaView and StatusBar components inside him.
 const CatalogScreen: React.FC = () => {

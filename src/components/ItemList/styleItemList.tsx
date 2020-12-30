@@ -24,7 +24,7 @@ const styleItemList = StyleSheet.create({
     marginTop: 10,
     paddingTop: 20,
     alignSelf: 'center',
-    // width: 420,
+    // // width: Dimensions.get('window').width,
     // TODO: Modificar a largura do container da ListItem para que elá tenha a mesma que o dispositivo.
   },
 });

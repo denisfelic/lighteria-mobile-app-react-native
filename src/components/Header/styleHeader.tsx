@@ -14,21 +14,6 @@ const stylesHeader = StyleSheet.create({
     marginLeft: 40,
     fontFamily: 'OpenSans-ExtraBold',
   },
-
-  // Button Component
-  cartButton: {
-    backgroundColor: '#fff',
-    width: 70,
-    height: 70,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 100,
-    marginRight: 20,
-  },
-  cartButtonIcon: {
-    width: 35,
-    height: 35,
-  },
 });
 
 export default stylesHeader;

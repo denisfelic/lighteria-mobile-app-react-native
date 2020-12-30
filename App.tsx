@@ -10,9 +10,17 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CatalogScreen">
-        <Stack.Screen name="CatalogScreen" component={CatalogScreen} />
-        <Stack.Screen name="ItemDetailScreen" component={ItemDetailScreen} />
+      <Stack.Navigator initialRouteName="Catalog">
+        <Stack.Screen
+          name="Catalog"
+          component={CatalogScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ItemDetail"
+          component={ItemDetailScreen}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
