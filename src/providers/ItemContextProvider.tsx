@@ -1,6 +1,15 @@
 import React, {useContext, useState} from 'react';
 
-export const ItemContext = React.createContext({});
+interface IItemContext {
+  itemsCheckout: [];
+  setItemsCheckout: any;
+}
+const testItemsCheckoutContext: IItemContext = {
+  itemsCheckout: [],
+  setItemsCheckout: null,
+};
+// TODO: Adicionar tipos corretos á todos os componentes
+export const ItemContext = React.createContext(testItemsCheckoutContext);
 
 const ItemContextProvider: React.FC = ({children}) => {
   const [itemsCheckout, setItemsCheckout] = useState([]);
@@ -17,7 +26,7 @@ const ItemContextProvider: React.FC = ({children}) => {
 
 export default ItemContextProvider;
 
-export function useItem() {
+export function useItemContext() {
   const context = useContext(ItemContext);
   const {itemsCheckout, setItemsCheckout} = context;
   return {itemsCheckout, setItemsCheckout};

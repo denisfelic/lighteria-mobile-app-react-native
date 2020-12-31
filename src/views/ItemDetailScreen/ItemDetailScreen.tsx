@@ -1,8 +1,6 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, ImageBackground} from 'react-native';
-import {StatusBar, Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {ImageBackground} from 'react-native';
+import {StatusBar, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import BackButton from '../../components/BackButton/BackButton';
 import CartButton from '../../components/CartButton/CartButton';

@@ -1,14 +1,14 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useItemContext} from '../../providers/ItemContextProvider';
 import {ItemInterface} from '../ItemInterface';
 import {styleItemCard} from './styleItemCard';
 
 const ItemCard = (item: ItemInterface) => {
-  const navigation = useNavigation();
   const price = item.price.toString().replace('.', ',');
-
+  const {itemsCheckout, setItemsCheckout} = useItemContext();
+  // TODO: Separar o código abaixo em componentes menores e reutilizáveis
   return (
     <View style={styleItemCard.card}>
       <View style={styleItemCard.cardTitlesContainer}>
@@ -40,7 +40,7 @@ const ItemCard = (item: ItemInterface) => {
         <TouchableOpacity
           style={styleItemCard.cardBtnBuy}
           onPress={() => {
-            navigation.goBack();
+            setItemsCheckout([...itemsCheckout, {...item}]);
           }}>
           <Text style={styleItemCard.cardBtnBuyText}>Comprar</Text>
         </TouchableOpacity>
